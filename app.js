@@ -17,15 +17,10 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-// http request logging (:mathod, :url, :status, :response-time-ms, :res)
 app.use(logger('dev'));
-// intercepts and parses set data & populates req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// similar to bodyParser, except for cookies ( req.cookies )
 app.use(cookieParser());
-// express & node function which makes public directory accesible from just /public/*
 app.use(express.static(path.join(__dirname, 'public')));
 
 // short-hand setup | paths defined as only '/' now | paths are now mini-apps
