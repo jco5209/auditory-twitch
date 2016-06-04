@@ -1,3 +1,7 @@
 .bg-shade {
 	background-color: #333;
 }
+
+.top-buffer {
+	margin-top: 10rem;
+}

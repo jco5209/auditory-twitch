@@ -16,6 +16,11 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.post('/', function(req, res) {
+    console.log(req.body.streamer);
+    res.render('index', { stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
+});
+
 // router.get('/', function(req, res, next) {
 
 // });   
