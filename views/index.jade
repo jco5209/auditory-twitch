@@ -6,4 +6,15 @@ block content
 		p Welcome to #{title}
 		.row
 			.col-md-12.text-center.bg-danger
-				<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://www.twitch.tv/reckful/chat" height="500" width="350"></iframe>
+				script(src='http://player.twitch.tv/js/embed/v1.js').
+				div(id='{PLAYER_DIV_ID}')
+					script.
+						var options = {
+						width: 854,
+						height: 480,
+						channel: "reynad27"
+						};
+						var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+						player.setVolume(0.5);
+
+
