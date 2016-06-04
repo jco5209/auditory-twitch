@@ -2,8 +2,8 @@ extends layout
 
 block content
 	.container
-		a(href='/')
-			h1 Twitch Audio
+		h1
+			a(href='/') Twitch Audio
 		.row
 			.col-md-4.col-md-offset-4
 				form(action='/', method='POST')
@@ -20,7 +20,7 @@ block content
 					var options = {
 					width: 500,
 					height: 350,
-					channel: "lirik"
+					channel: "#{stream}"
 					};
 					var player = new Twitch.Player("PLAYER_DIV_ID", options);
 					player.setVolume(0.5);
