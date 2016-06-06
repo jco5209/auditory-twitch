@@ -8,10 +8,8 @@ router.get('/', function(req, res, next) {
 		if (!error && response.statusCode == 200) {	
 			console.log('inside request');
 			var bodyJson = JSON.parse(body);
-			var topGame = bodyJson.top[0].game.name;
-			console.log(topGame);
-			console.log(typeof topGame);
-			res.render('index', { title: 'Twitch Audio', game: topGame });
+			
+			res.render('index', { title: 'Twitch Audio' });
 		}
 	});
 });
