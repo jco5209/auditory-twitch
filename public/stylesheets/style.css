@@ -9,3 +9,7 @@
 .playNo {
 	display: none;
 }
+
+.playerControls {
+	background-color: rgba(0,0,0,.5);
+}
