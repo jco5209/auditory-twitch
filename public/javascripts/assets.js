@@ -1,21 +1,25 @@
-var playerPlay = document.getElementById("play");
-var playerPause = document.getElementById("pause");
+// General player control functionality 
+	// Play; Pause; Volume Up; Volume Down; Mute/Unmute
 
-var playerUp = document.getElementById("volumeUp");
-var playerDown = document.getElementById("volumeDown");
-
-playerPlay.addEventListener("click", function() {
+document.getElementById("play").addEventListener("click", function() {
 	player.play();
 });
-
-playerPause.addEventListener("click", function() {
+document.getElementById("pause").addEventListener("click", function() {
 	player.pause();
 });
-
-playerUp.addEventListener("click", function() {
+document.getElementById("volumeUp").addEventListener("click", function() {
 	player.setVolume(player.getVolume() + 0.1);
 });
-
-playerDown.addEventListener("click", function() {
+document.getElementById("volumeDown").addEventListener("click", function() {
 	player.setVolume(player.getVolume() - 0.1);
+});
+
+document.getElementById("mute").addEventListener("click", function() {
+
+	if(player.getMuted()) {
+		player.setMuted(false);
+	}	else {
+		player.setMuted(true);
+	}
+
 });
