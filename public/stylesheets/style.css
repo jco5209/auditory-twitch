@@ -11,5 +11,37 @@
 }
 
 .playerControls {
+	margin: 1rem;
 	background-color: rgba(0,0,0,.5);
 }
+	.playerControls span {
+		margin: 0 0 0 .5rem;
+		color: #fff;
+	}
+
+.bg-px {
+	background-image: url("/images/px_by_Gre3g.png");
+}
+
+.audio-twitch-h1 {
+	background-color: rgba(0,0,0,.5);
+	padding: 1.75rem;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.btn-xs {
+	margin: .1rem;
+	border-radius: 0;
+}
+
+.form-control {
+	background-color: rgba(255,255,255,.1);
+	border-radius: 0;
+	color: #fff;
+}
+	.form-control:focus {
+		border-color: #fff;
+	}

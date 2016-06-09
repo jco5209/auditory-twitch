@@ -12,6 +12,7 @@ router.post('/', function(req, res) {
 		if (!error && response.statusCode == 200) {
 
 			var reqJP = JSON.parse(body);
+			console.log(reqJP.stream);
 
 			if (reqJP.stream === null) {
 				res.render('index', { onOff: 'Stream offline - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
