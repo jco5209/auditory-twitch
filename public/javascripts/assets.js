@@ -27,9 +27,9 @@ document.getElementById("mute").addEventListener("click", function() {
 var chat = document.getElementById('chat_embed');
 
 if(chat.nodeName === "UNDEFINED") {
-	document.getElementById('placeHolder').style.visibility='hidden';
+	document.getElementById('placeHolder').style.display='none';
 } else {
-	document.getElementById('placeHolder').style.visibility='visible';
+	document.getElementById('placeHolder').style.display='block';
 }
 
 
