@@ -23,3 +23,17 @@ document.getElementById("mute").addEventListener("click", function() {
 	}
 
 });
+
+var chat = document.getElementById('chat_embed');
+
+if(chat.nodeName === "UNDEFINED") {
+	document.getElementById('placeHolder').style.visibility='hidden';
+} else {
+	document.getElementById('placeHolder').style.visibility='visible';
+}
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router  = express.Router();
 var request = require('request');
 
 /* GET home page. */
@@ -12,12 +12,12 @@ router.post('/', function(req, res) {
 		if (!error && response.statusCode == 200) {
 
 			var reqJP = JSON.parse(body);
-			console.log(reqJP.stream);
 
 			if (reqJP.stream === null) {
 				res.render('index', { onOff: 'Stream offline - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
 			}	else {
 				res.render('index', { onOff: 'Now listening to ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
+				//console.log(reqJP.stream.channel.status);
 			}
 
 		} // end request() error check
