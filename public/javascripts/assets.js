@@ -24,6 +24,8 @@ document.getElementById("mute").addEventListener("click", function() {
 
 });
 
+// Display chat only when streamer is online
+
 var chat = document.getElementById('chat_embed');
 
 if(chat.nodeName === "UNDEFINED") {

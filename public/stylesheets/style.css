@@ -1,3 +1,6 @@
+
+/* General Layout */
+
 body {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -9,6 +12,22 @@ body {
 .top-buffer {
 	margin-top: 10rem;
 }
+
+.bg-px {
+	background-image: url("/images/black_lozenge.png");
+}
+
+.audio-twitch-h1 {
+	background-color: rgba(0,0,0,.5);
+	padding: 1.75rem;
+}
+
+.col-sm-4 {
+	padding-top: 1rem;
+	background-color: rgba(0,0,0,.4);
+}	
+
+/* Player Controls */
 
 .playNo {
 	display: none;
@@ -22,15 +41,6 @@ body {
 		margin: 0 0 0 .5rem;
 		color: #fff;
 	}
-
-.bg-px {
-	background-image: url("/images/black_lozenge.png");
-}
-
-.audio-twitch-h1 {
-	background-color: rgba(0,0,0,.5);
-	padding: 1.75rem;
-}
 
 .btn {
 	border-radius: 0;
@@ -50,17 +60,11 @@ body {
 		border-color: #fff;
 	}
 
-.col-md-4 {
-	padding-top: 1rem;
-	background-color: rgba(0,0,0,.4);
-}	
+/* Chat */
 
 #chat_embed {
 	padding-bottom: .75rem;
 }
-
-
-
 
 
 

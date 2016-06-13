@@ -5,28 +5,28 @@ block content
 		a.text-warning.audio-twitch-h1(href='/') Audio.Twitch
 	.container
 		.row
-			.col-md-4.col-md-offset-4
+			.col-sm-4.col-sm-offset-4
 				form(action='/', method='POST', name='streamForm')
 					.input-group
 						input#channel.form-control(type='stream', placeholder='Stream Channel', name='streamer')
 						span.input-group-btn
 							button.btn.btn-default(type='submit') Search	
 		.row
-			.col-md-4.col-md-offset-4
+			.col-sm-4.col-sm-offset-4
 				#placeHolder.playerControls
 					button(id='play', type='submit').btn-xs 
 						i.fa.fa-play
 					button(id='pause', type='submit').btn-xs
 						i.fa.fa-pause
 					button(id='mute', type='submit').btn-xs
-						i.fa.fa-volume-off		
+						i.fa.fa-volume-off
 					button(id='volumeDown', type='submit').btn-xs
 						i.fa.fa-volume-down
 					button(id='volumeUp', type='submit').btn-xs
 						i.fa.fa-volume-up
 					span #{onOff} #{stream}
 				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='https://www.twitch.tv/#{stream}/chat', height='500', width='360')
-			.col-md-4.playNo
+			.col-sm-4.playNo
 				script(src='https://player.twitch.tv/js/embed/v1.js')
 				div(id='PLAYER_DIV_ID')
 				script.
