@@ -18,12 +18,12 @@ block content
 						i.fa.fa-play
 					button(id='pause', type='submit').btn-xs
 						i.fa.fa-pause
+					button(id='mute', type='submit').btn-xs
+						i.fa.fa-volume-off		
 					button(id='volumeDown', type='submit').btn-xs
 						i.fa.fa-volume-down
 					button(id='volumeUp', type='submit').btn-xs
 						i.fa.fa-volume-up
-					button(id='mute', type='submit').btn-xs
-						i.fa.fa-volume-off
 					span #{onOff} #{stream}
 				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='http://www.twitch.tv/#{stream}/chat', height='500', width='360')
 			.col-md-4.playNo
