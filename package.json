@@ -1,6 +1,9 @@
 {
   "name": "twitch",
   "version": "0.0.0",
+  "engines": {
+    "node": "4.4.5"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
