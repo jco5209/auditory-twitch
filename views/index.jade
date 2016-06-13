@@ -19,13 +19,13 @@ block content
 					button(id='pause', type='submit').btn-xs
 						i.fa.fa-pause
 					button(id='mute', type='submit').btn-xs
-						i.fa.fa-volume-off		
+						i.fa.fa-volume-off
 					button(id='volumeDown', type='submit').btn-xs
 						i.fa.fa-volume-down
 					button(id='volumeUp', type='submit').btn-xs
 						i.fa.fa-volume-up
 					span #{onOff} #{stream}
-				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='http://www.twitch.tv/#{stream}/chat', height='500', width='360')
+				iframe#chat_embed(frameborder='0', scrolling='no', src='http://www.twitch.tv/#{stream}/chat', height='500', width='360')
 			.col-md-4.playNo
 				script(src='http://player.twitch.tv/js/embed/v1.js')
 				div(id='PLAYER_DIV_ID')
