@@ -21,9 +21,9 @@ router.post('/', function(req, res) {
 			}
 
 		} else {
+			var errJP = JSON.parse(body);
 			res.render('index', { onOff: errJP.error + ' - ', stream: req.body.streamer.toLowerCase(), iframe: 'notFound' });
 		}
-		
 	}); // end request()
 });
 
