@@ -24,6 +24,8 @@ block content
 						i.fa.fa-volume-down
 					button(id='volumeUp', type='submit').btn-xs
 						i.fa.fa-volume-up
+					button(id='chatToggle', type='submit').btn-xs
+						i.fa.fa-comments		
 					span #{onOff} #{stream}
 				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='https://www.twitch.tv/#{stream}/chat', height='500', width='360')
 			.col-sm-4.playNo

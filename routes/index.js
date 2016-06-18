@@ -4,7 +4,7 @@ var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Twitch Audio' });
+	res.render('index', { title: 'Auditory' });
 });
 
 router.post('/', function(req, res) {
@@ -12,12 +12,11 @@ router.post('/', function(req, res) {
 		if (!error && response.statusCode == 200) {
 
 			var reqJP = JSON.parse(body);
-			console.log(reqJP);
 
 			if (reqJP.stream === null) {
-				res.render('index', { onOff: 'Stream offline - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
+				res.render('index', { onOff: 'Offline - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
 			} else {
-				res.render('index', { onOff: 'Now listening to ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
+				res.render('index', { onOff: 'Live - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
 			}
 
 		} else {

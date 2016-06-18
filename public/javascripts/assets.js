@@ -24,7 +24,7 @@ document.getElementById("mute").addEventListener("click", function() {
 
 });
 
-// Display chat only when streamer is online
+// Display controls only when streamer is online
 
 var chat = document.getElementById('chat_embed');
 
@@ -33,6 +33,23 @@ if(chat.nodeName === "UNDEFINED") {
 } else {
 	document.getElementById('placeHolder').style.display='block';
 }
+
+// Display chat on/off on toggle'd click
+
+var chatOnOff = true;
+
+document.getElementById('chatToggle').addEventListener("click", function() {
+	if(chatOnOff) {
+		chatOnOff = false;
+		document.getElementById('chat_embed').style.display='none';
+	} else if(!chatOnOff) {
+		chatOnOff = true;
+		document.getElementById('chat_embed').style.display='block';
+	}
+});
+
+
+
 
 
 
