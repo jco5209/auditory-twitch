@@ -4,10 +4,15 @@ document.getElementById("streamSearch").addEventListener("keyup", function() {
 	var streamBtn = document.getElementById('streamBtn');
 	var streamSearch = document.getElementById('streamSearch');
 
-	if(streamSearch.value.indexOf(' ') >= 0) {
-		streamBtn.disabled = true;
-	} else {
-		streamBtn.disabled = false;
+	var illegalChrs = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+
+	for(var i = 0; i < illegalChrs.length; i++) {
+		if(streamSearch.value.indexOf(illegalChrs[i]) >= 0) {
+			streamBtn.disabled = true;
+			break;
+		} else {
+			streamBtn.disabled = false;
+		}
 	}
 
 });
