@@ -1,3 +1,21 @@
+// Search field
+
+document.getElementById("streamSearch").addEventListener("keyup", function() {
+	var streamBtn = document.getElementById('streamBtn');
+	var streamSearch = document.getElementById('streamSearch');
+
+	if(streamSearch.value.indexOf(' ') >= 0) {
+		streamBtn.disabled = true;
+	} else {
+		streamBtn.disabled = false;
+	}
+
+});
+
+
+
+
+
 // General player control functionality 
 	// Play; Pause; Volume Up; Volume Down; Mute/Unmute
 

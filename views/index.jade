@@ -6,11 +6,11 @@ block content
 	.container
 		.row
 			.col-sm-4.col-sm-offset-4
-				form(action='/', method='POST', name='streamForm')
+				form(action='/', method='POST', id='streamForm')
 					.input-group
-						input#channel.form-control(type='stream', placeholder='Streamer', name='streamer')
+						input#streamSearch.form-control(type='stream', name='streamer', placeholder='Streamer')
 						span.input-group-btn
-							button.btn.btn-default(type='submit') Search	
+							button.btn.btn-default(type='submit', id='streamBtn') Search	
 		.row
 			.col-sm-4.col-sm-offset-4
 				#placeHolder.playerControls
@@ -25,7 +25,7 @@ block content
 					button(id='volumeUp', type='submit').btn-xs
 						i.fa.fa-volume-up
 					button(id='chatToggle', type='submit').btn-xs
-						i.fa.fa-comments		
+						i.fa.fa-comments
 					span #{onOff} #{stream}
 				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='https://www.twitch.tv/#{stream}/chat', height='500', width='360')
 			.col-sm-4.playNo
