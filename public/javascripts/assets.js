@@ -1,17 +1,22 @@
 // Search field
 
-document.getElementById("streamSearch").addEventListener("keyup", function() {
+document.getElementById("streamSearch").addEventListener("keypress", function(evt) {
 	var streamBtn = document.getElementById('streamBtn');
 	var streamSearch = document.getElementById('streamSearch');
+	var illegalChr = document.getElementById('illegalChr');
 
 	var illegalChrs = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
 
 	for(var i = 0; i < illegalChrs.length; i++) {
 		if(streamSearch.value.indexOf(illegalChrs[i]) >= 0) {
 			streamBtn.disabled = true;
+			illegalChr.innerHTML = "Illegal Character " + "' " + streamSearch.value.slice(streamSearch.value.length -1) + " '";
+			illegalChr.style.display = 'block';
+			evt.preventDefault();
 			break;
 		} else {
 			streamBtn.disabled = false;
+			illegalChr.style.display = 'none';
 		}
 	}
 

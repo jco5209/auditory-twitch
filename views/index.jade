@@ -8,7 +8,9 @@ block content
 			.col-sm-4.col-sm-offset-4
 				form(action='/', method='POST', id='streamForm')
 					.input-group
-						input#streamSearch.form-control(type='stream', name='streamer', placeholder='Streamer')
+						input#streamSearch.form-control(type='text', name='streamer', placeholder='Streamer')
+						#illegalChr
+							span Illegal character 
 						span.input-group-btn
 							button.btn.btn-default(type='submit', id='streamBtn') Search	
 		.row
