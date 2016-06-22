@@ -29,9 +29,9 @@ block content
 					button(id='chatToggle', type='submit').btn-xs
 						i.fa.fa-comments
 					span #{onOff} #{stream}
-				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='https://www.twitch.tv/#{stream}/chat', height='500', width='360')
+				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='http://www.twitch.tv/#{stream}/chat', height='500', width='360')
 			.col-sm-4.playNo
-				script(src='https://player.twitch.tv/js/embed/v1.js')
+				script(src='http://player.twitch.tv/js/embed/v1.js')
 				div(id='PLAYER_DIV_ID')
 				script.
 					var options = {
