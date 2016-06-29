@@ -3,6 +3,7 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
 }
 
 .bg-shade {
@@ -38,18 +39,17 @@ body {
 	border: 1px solid #fff;
 	color: #fff;
 }
-
-#illegalChr::before {
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 25px;
-	width: 0; 
-	height: 0;
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-top: 10px solid #fff;
-}
+	#illegalChr::before {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 25px;
+		width: 0; 
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #fff;
+	}
 
 /* Player Controls */
 
@@ -58,13 +58,16 @@ body {
 }
 
 .playerControls {
+	/*overflow: hidden;*/
+	vertical-align: text-top;
+	white-space: nowrap;
 	margin: 1rem;
 	background-color: rgb(23,20,31);
 }
-	.playerControls span {
+/*	.playerControls span {
 		margin: 0 0 0 .5rem;
 		color: #fff
-	}
+	}*/
 
 .btn {
 	border-radius: 0;
@@ -83,6 +86,24 @@ body {
 	.form-control:focus {
 		border-color: #fff;
 	}
+
+#streamInfo {
+	display: inline-block;
+	vertical-align:top;
+    overflow: scroll;
+    width: 185px;
+    white-space: nowrap;
+    color: #fff;
+}	
+
+#streamInfo::-webkit-scrollbar { 
+    display: none; 
+}
+
+.testing {
+	display: inline-block;
+	vertical-align:top
+}
 
 /* Chat */
 

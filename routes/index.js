@@ -16,7 +16,7 @@ router.post('/', function(req, res) {
 			if (reqJP.stream === null) {
 				res.render('index', { onOff: 'Offline - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
 			} else {
-				res.render('index', { onOff: 'Live - ', stream: req.body.streamer.toLowerCase(), iframe: 'iframe'});
+				res.render('index', { onOff: 'Live - ', stream: req.body.streamer.toLowerCase(), status: '| ' + reqJP.stream.channel.status, iframe: 'iframe'});
 			}
 
 		} else {

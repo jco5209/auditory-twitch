@@ -8,6 +8,7 @@ document.getElementById("streamSearch").addEventListener("keypress", function(ev
 	var illegalChrs = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
 
 	for(var i = 0; i < illegalChrs.length; i++) {
+
 		if(streamSearch.value.indexOf(illegalChrs[i]) >= 0) {
 			streamBtn.disabled = true;
 			illegalChr.innerHTML = "Illegal Character " + "' " + streamSearch.value.slice(streamSearch.value.length -1) + " '";
@@ -18,12 +19,9 @@ document.getElementById("streamSearch").addEventListener("keypress", function(ev
 			streamBtn.disabled = false;
 			illegalChr.style.display = 'none';
 		}
-	}
 
+	} //end loop
 });
-
-
-
 
 
 // General player control functionality 
@@ -52,6 +50,31 @@ document.getElementById("mute").addEventListener("click", function() {
 
 });
 
+//Text Carousel
+
+var streamInfo = document.getElementById('streamInfo');
+
+function myScroll() { streamInfo.scrollLeft = streamInfo.scrollLeft + 1 };
+
+if(streamInfo.scrollWidth > 185) {
+	streamInfo.addEventListener("mouseenter", function() {
+		var myInterv = setInterval(myScroll, 50);
+
+		streamInfo.addEventListener("mouseleave", function() {
+			clearInterval(myInterv);
+
+			if(streamInfo.scrollLeft == streamInfo.scrollWidth - 185) {
+				streamInfo.scrollLeft = 0;
+			}
+			
+		});
+	});
+}
+
+
+
+
+
 // Display controls only when streamer is online
 
 var chat = document.getElementById('chat_embed');
@@ -63,6 +86,7 @@ if(chat.nodeName === "UNDEFINED") {
 }
 
 // Display chat on/off on toggle'd click
+
 
 var chatOnOff = true;
 
