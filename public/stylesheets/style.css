@@ -24,6 +24,7 @@ body {
 }
 
 .col-sm-4 {
+	width: 390px;
 	padding-top: 1rem;
 	background-color: rgba(23,20,31,.4);
 }	
@@ -57,17 +58,17 @@ body {
 	display: none;
 }
 
-.playerControls {
-	/*overflow: hidden;*/
-	vertical-align: text-top;
-	white-space: nowrap;
+#playerControls {
 	margin: 1rem;
+	vertical-align: middle;
+	white-space: nowrap;
 	background-color: rgb(23,20,31);
 }
-/*	.playerControls span {
-		margin: 0 0 0 .5rem;
-		color: #fff
-	}*/
+
+.playerBtn {
+	display: inline-block;
+	vertical-align: middle;
+}
 
 .btn {
 	border-radius: 0;
@@ -89,21 +90,21 @@ body {
 
 #streamInfo {
 	display: inline-block;
-	vertical-align:top;
+	vertical-align: middle;
     overflow: scroll;
     width: 185px;
     white-space: nowrap;
     color: #fff;
 }	
 
-#streamInfo::-webkit-scrollbar { 
-    display: none; 
-}
+	#streamInfo:hover {
+		cursor: default;
+	}
 
-.testing {
-	display: inline-block;
-	vertical-align:top
-}
+	#streamInfo::-webkit-scrollbar { 
+	    display: none; 
+	}
+
 
 /* Chat */
 
