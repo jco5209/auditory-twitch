@@ -1,7 +1,7 @@
 (function () {
 
 	// Search field
-		//if illegalChrs[i] in streamSearch disable additional input
+		//if illegalChrs[i] in streamSearch disable keypress input
 
 	document.getElementById("streamSearch").addEventListener("keypress", function(evt) {
 

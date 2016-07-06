@@ -1,18 +1,6 @@
 extends layout
 
-block content
-	h1
-		a.text-warning.audio-twitch-h1(href='/') Auditory
-	.container
-		.row
-			.col-sm-4.col-sm-offset-4
-				form(action='/', method='POST', id='streamForm')
-					.input-group
-						input#streamSearch.form-control(type='text', name='streamer', placeholder='Streamer')
-						#illegalChr
-							span Illegal character 
-						span.input-group-btn
-							button.btn.btn-default(type='submit', id='streamBtn') Search	
+block content	
 		.row
 			.col-sm-4.col-sm-offset-4
 				#playerControls
