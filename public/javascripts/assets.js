@@ -1,118 +1,138 @@
 (function () {
 
+
 	// Search field
 		//if illegalChrs[i] in streamSearch disable keypress input
 
-	var streamBtn = document.getElementById('streamBtn'),
-		streamSearch = document.getElementById('streamSearch'),
-		illegalChr = document.getElementById('illegalChr');	
+	function atIllegalChrs() {
 
-	streamSearch.addEventListener("keypress", function(evt) {
+		var streamBtn = document.getElementById('streamBtn'),
+			streamSearch = document.getElementById('streamSearch'),
+			illegalChr = document.getElementById('illegalChr');	
 
-		var illegalChrs = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+		streamSearch.addEventListener("keypress", function(evt) {
 
-		for(var i = 0; i < illegalChrs.length; i++) {
+			var illegalChrs = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
 
-			if(streamSearch.value.indexOf(illegalChrs[i]) >= 0) {
-				streamBtn.disabled = true;
-				illegalChr.innerHTML = "Illegal Character " + "' " + streamSearch.value.slice(streamSearch.value.length -1) + " '";
-				illegalChr.style.display = 'block';
-				evt.preventDefault();
-				break;
-			} 
+			for(var i = 0; i < illegalChrs.length; i++) {
 
-			else {
-				streamBtn.disabled = false;
-				illegalChr.style.display = 'none';
-			}
+				if(streamSearch.value.indexOf(illegalChrs[i]) >= 0) {
+					streamBtn.disabled = true;
+					illegalChr.innerHTML = "Illegal Character " + "' " + streamSearch.value.slice(streamSearch.value.length -1) + " '";
+					illegalChr.style.display = 'block';
+					evt.preventDefault();
+					break;
+				} 
 
-		} //end loop
-	});
+				else {
+					streamBtn.disabled = false;
+					illegalChr.style.display = 'none';
+				}
+
+			} //end loop
+		});
+
+	}	atIllegalChrs();	
 
 
 	// General player control functionality 
 		// Play; Pause; Volume Up; Volume Down; Mute/Unmute
 
-	var play = document.getElementById("play"),
-		pause = document.getElementById("pause"),
-		volumeUp = document.getElementById("volumeUp"),
-		volumeDown = document.getElementById("volumeDown"),
-		mute = document.getElementById("mute");	
+	function atControls() {
 
-	play.addEventListener("click", function() {
-		player.play();
-	});
-	pause.addEventListener("click", function() {
-		player.pause();
-	});
-	volumeUp.addEventListener("click", function() {
-		player.setVolume(player.getVolume() + 0.1);
-	});
-	volumeDown.addEventListener("click", function() {
-		player.setVolume(player.getVolume() - 0.1);
-	});
+		var play = document.getElementById("play"),
+			pause = document.getElementById("pause"),
+			volumeUp = document.getElementById("volumeUp"),
+			volumeDown = document.getElementById("volumeDown"),
+			mute = document.getElementById("mute");	
 
-	mute.addEventListener("click", function() {
+		play.addEventListener("click", function() {
+			player.play();
+		});
+		pause.addEventListener("click", function() {
+			player.pause();
+		});
+		volumeUp.addEventListener("click", function() {
+			player.setVolume(player.getVolume() + 0.1);
+		});
+		volumeDown.addEventListener("click", function() {
+			player.setVolume(player.getVolume() - 0.1);
+		});
 
-		if(player.getMuted()) {
-			player.setMuted(false);
-		}	else {
-			player.setMuted(true);
-		}
+		mute.addEventListener("click", function() {
 
-	});
+			if(player.getMuted()) {
+				player.setMuted(false);
+			}	else {
+				player.setMuted(true);
+			}
 
+		});
+
+	}	atControls();	
+
+	
 	//Text Carousel
 		//Stream title text scrollLeft on mouseenter
 
-	var streamInfo = document.getElementById('streamInfo');
+	function atTextCarousel() {
 
-	function myScroll() { streamInfo.scrollLeft = streamInfo.scrollLeft + 1 };
+		var streamInfo = document.getElementById('streamInfo');
 
-	if(streamInfo.scrollWidth > 185) {
-		streamInfo.addEventListener("mouseenter", function() {
-			var myInterv = setInterval(myScroll, 50);
+		function myScroll() { streamInfo.scrollLeft = streamInfo.scrollLeft + 1 };
 
-			streamInfo.addEventListener("mouseleave", function() {
-				clearInterval(myInterv);
+		if(streamInfo.scrollWidth > 185) {
+			streamInfo.addEventListener("mouseenter", function() {
+				var myInterv = setInterval(myScroll, 50);
 
-				if(streamInfo.scrollLeft == streamInfo.scrollWidth - 185) {
-					streamInfo.scrollLeft = 0;
-				}
+				streamInfo.addEventListener("mouseleave", function() {
+					clearInterval(myInterv);
 
+					if(streamInfo.scrollLeft == streamInfo.scrollWidth - 185) {
+						streamInfo.scrollLeft = 0;
+					}
+
+				});
 			});
-		});
-	}
+		}
+
+	}	atTextCarousel();	
 
 
 	// Display controls only when streamer is online
 
-	var chat = document.getElementById('chat_embed'),
-		controls = document.getElementById('playerControls');
+	function atchatVisual() {
 
-	if(chat.nodeName == "UNDEFINED") {
-		controls.style.display='none';
-	} else {
-		controls.style.display='block';
-	}
+		var chat = document.getElementById('chat_embed'),
+			controls = document.getElementById('playerControls');
 
+		if(chat.nodeName == "UNDEFINED") {
+			controls.style.display='none';
+		} else {
+			controls.style.display='block';
+		}
+
+	} 	atchatVisual();
+
+	
 	// Display chat on/off on toggle'd click
 
+	function atChatToggle() {
+		var chatOnOff = true,
+			chatToggle = document.getElementById('chatToggle'),
+			chatEmbed = document.getElementById('chat_embed');
 
-	var chatOnOff = true,
-		chatToggle = document.getElementById('chatToggle'),
-		chatEmbed = document.getElementById('chat_embed');
-
-	chatToggle.addEventListener("click", function() {
-		if(chatOnOff) {
-			chatOnOff = false;
-			chatEmbed.style.display='none';
-		} else if(!chatOnOff) {
-			chatOnOff = true;
-			chatEmbed.style.display='block';
-		}
-	});
-
+		chatToggle.addEventListener("click", function() {
+			if(chatOnOff) {
+				chatOnOff = false;
+				chatEmbed.style.display='none';
+			} else if(!chatOnOff) {
+				chatOnOff = true;
+				chatEmbed.style.display='block';
+			}
+		});
+	}	atChatToggle();
+	
 })();
 
 
