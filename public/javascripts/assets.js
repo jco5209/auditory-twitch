@@ -3,11 +3,11 @@
 	// Search field
 		//if illegalChrs[i] in streamSearch disable keypress input
 
-	document.getElementById("streamSearch").addEventListener("keypress", function(evt) {
+	var streamBtn = document.getElementById('streamBtn'),
+		streamSearch = document.getElementById('streamSearch'),
+		illegalChr = document.getElementById('illegalChr');	
 
-		var streamBtn = document.getElementById('streamBtn');
-		var streamSearch = document.getElementById('streamSearch');
-		var illegalChr = document.getElementById('illegalChr');
+	streamSearch.addEventListener("keypress", function(evt) {
 
 		var illegalChrs = [' ', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
 
@@ -33,20 +33,26 @@
 	// General player control functionality 
 		// Play; Pause; Volume Up; Volume Down; Mute/Unmute
 
-	document.getElementById("play").addEventListener("click", function() {
+	var play = document.getElementById("play"),
+		pause = document.getElementById("pause"),
+		volumeUp = document.getElementById("volumeUp"),
+		volumeDown = document.getElementById("volumeDown"),
+		mute = document.getElementById("mute");	
+
+	play.addEventListener("click", function() {
 		player.play();
 	});
-	document.getElementById("pause").addEventListener("click", function() {
+	pause.addEventListener("click", function() {
 		player.pause();
 	});
-	document.getElementById("volumeUp").addEventListener("click", function() {
+	volumeUp.addEventListener("click", function() {
 		player.setVolume(player.getVolume() + 0.1);
 	});
-	document.getElementById("volumeDown").addEventListener("click", function() {
+	volumeDown.addEventListener("click", function() {
 		player.setVolume(player.getVolume() - 0.1);
 	});
 
-	document.getElementById("mute").addEventListener("click", function() {
+	mute.addEventListener("click", function() {
 
 		if(player.getMuted()) {
 			player.setMuted(false);
@@ -81,26 +87,29 @@
 
 	// Display controls only when streamer is online
 
-	var chat = document.getElementById('chat_embed');
+	var chat = document.getElementById('chat_embed'),
+		controls = document.getElementById('playerControls');
 
 	if(chat.nodeName == "UNDEFINED") {
-		document.getElementById('playerControls').style.display='none';
+		controls.style.display='none';
 	} else {
-		document.getElementById('playerControls').style.display='block';
+		controls.style.display='block';
 	}
 
 	// Display chat on/off on toggle'd click
 
 
-	var chatOnOff = true;
+	var chatOnOff = true,
+		chatToggle = document.getElementById('chatToggle'),
+		chatEmbed = document.getElementById('chat_embed');
 
-	document.getElementById('chatToggle').addEventListener("click", function() {
+	chatToggle.addEventListener("click", function() {
 		if(chatOnOff) {
 			chatOnOff = false;
-			document.getElementById('chat_embed').style.display='none';
+			chatEmbed.style.display='none';
 		} else if(!chatOnOff) {
 			chatOnOff = true;
-			document.getElementById('chat_embed').style.display='block';
+			chatEmbed.style.display='block';
 		}
 	});
 
