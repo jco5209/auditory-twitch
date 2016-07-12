@@ -101,7 +101,7 @@
 
 	// Display controls only when streamer is online
 
-	function atchatVisual() {
+	function atChatVisual() {
 
 		var chat = document.getElementById('chat_embed'),
 			controls = document.getElementById('playerControls');
@@ -134,10 +134,3 @@
 	}	atChatToggle();
 	
 })();
-
-
-
-
-
-
-
