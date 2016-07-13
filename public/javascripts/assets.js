@@ -112,7 +112,7 @@
 			controls.style.display='block';
 		}
 
-	} 	atchatVisual();
+	} 	atChatVisual();
 
 	
 	// Display chat on/off on toggle'd click
