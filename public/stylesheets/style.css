@@ -110,11 +110,55 @@ body {
 
 #chat_embed {
 	padding-bottom: .75rem;
+	position: relative;
 }
 
+/* Loading Bar */
 
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 
+.text {
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: square;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 3s linear;
+  animation: stroke 3s linear;
+}
 
+.text {
+  stroke: #F5A503;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+@-webkit-keyframes stroke {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+svg {
+  position: fixed;
+  width: 120px;
+  height: 180px;
+  top: 50%;
+  left: calc(50% - 60px);
+  font: 9.5em/1 Josefin Sans, Impact;
+}
 
 
 

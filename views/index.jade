@@ -19,6 +19,17 @@ block content
 							i.fa.fa-comments
 					#streamInfo
 						span #{onOff} #{stream} #{status}
+					svg
+						//Symbol
+						symbol#s-text
+							text(text-anchor='middle', x='50%', y='50%', dy='.35em')
+								|	A
+						//Duplicate symbols
+						use.text(xlink:href='#s-text')
+						use.text(xlink:href='#s-text')
+						use.text(xlink:href='#s-text')
+						use.text(xlink:href='#s-text')
+						use.text(xlink:href='#s-text')
 				#{iframe}#chat_embed(frameborder='0', scrolling='no', src='http://www.twitch.tv/#{stream}/chat', height='500', width='360')
 			.col-sm-4.playNo
 				script(src='http://player.twitch.tv/js/embed/v1.js')
