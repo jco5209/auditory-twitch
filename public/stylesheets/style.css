@@ -123,8 +123,8 @@ body {
   stroke-linecap: square;
   stroke-dasharray: 700;
   stroke-dashoffset: 0;
-  -webkit-animation: stroke 3s linear;
-  animation: stroke 3s linear;
+  -webkit-animation: stroke 2s linear;
+  animation: stroke 2s linear;
 }
 
 .text {
