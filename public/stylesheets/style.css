@@ -129,8 +129,8 @@ body {
 
 .text {
   stroke: #F5A503;
-  -webkit-animation-delay: -1.2s;
-  animation-delay: -1.2s;
+  -webkit-animation-delay: -.5s;
+  animation-delay: -.5s;
 }
 
 @-webkit-keyframes stroke {
@@ -155,7 +155,7 @@ svg {
   position: fixed;
   width: 120px;
   height: 180px;
-  top: 50%;
+  top: 45%;
   left: calc(50% - 60px);
   font: 9.5em/1 Josefin Sans, Impact;
 }
