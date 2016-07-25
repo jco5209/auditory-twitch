@@ -1,5 +1,5 @@
 (function () {
-
+	//test
 
 	// Search field
 		//if illegalChrs[i] in streamSearch disable keypress input

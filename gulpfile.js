@@ -19,4 +19,12 @@ gulp.task("cleanCSS", function() {
 		.pipe(gulp.dest('public/stylesheets'))
 });
 
+gulp.task('watchFiles', function() {
+	gulp.watch('public/stylesheets/style.css', ['cleanCSS']);
+	gulp.watch('public/javascripts/assets.js', ['uglify']);
+});
+
+gulp.task('build', ['uglify', 'cleanCSS']);
+
+gulp.task('default', ['build']);
 
