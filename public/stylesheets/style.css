@@ -155,7 +155,7 @@ svg {
   position: fixed;
   width: 120px;
   height: 180px;
-  top: 45%;
+  top: calc(50% - 90px);
   left: calc(50% - 60px);
   font: 9.5em/1 Josefin Sans, Impact;
 }
